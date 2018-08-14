@@ -4,7 +4,7 @@ This column mixin can be used to calculate the max-width of a block. The mixin a
 
 ```css
 .container {
-    @include column(3);
+    @include column(3); // max-width: calc(25% - 30px);
 }
 ```
 
@@ -12,10 +12,10 @@ If you had to spread 3 columns in a wrapper that already had a columns value ass
 
 ```css
 .wrapper {
-    @include column(6);
+    @include column(6); // max-width: calc(50% - 20px);
 
     .container {
-        @include column(3, 6);
+        @include column(3, 6); // max-width: calc(50% - 20px);
     }
 }
 ```
