@@ -1,0 +1,16 @@
+/*
+ * This mixin is used to calculate the max-width of an element within it's wrapper.
+ *
+ * The columns have a flexible width
+ * The columns are divided by a gutter
+ * The gutters have a fixed width of 40px
+ *
+ */
+
+@mixin column($columnsWanted, $total: 12) {
+  $columnsTotal: $total;
+  $gapSize: 40;
+  $percentage: (($columnsWanted / $columnsTotal) * 100) * 1%;
+  $offset: ($gapSize / $columnsTotal) * ($columnsTotal - $columnsWanted) + px;
+  max-width: calc(#{$percentage} - #{$offset});
+}
